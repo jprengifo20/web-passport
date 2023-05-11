@@ -1,0 +1,97 @@
+<div class="estadoTramite">
+    <div>
+        <h2>Estado de tramite</h2>
+        <div class="contenedorTV">
+            <div>
+                {{#if this.validaciones}}
+                    {{#if this.tramite}}
+                        <p>Estado del tramite: Aprobado</p>
+                    
+                    {{else}}
+                    <p>Estado del tramite: No aprobado</p>
+                    {{/if}}
+                {{else}}
+                    <p>Estado del tramite: Pendiente</p>
+                {{/if}}
+            </div>
+            <table>
+                <thead>
+                <th>Documento</th>
+                <th>Estado</th>
+                </thead>
+                <tbody>
+                    {{#if this.validaciones}}
+                        <tr>
+                        <td>Foto</td>
+                        <td>{{this.validaciones.foto}}</td>
+                    </tr>
+                    <tr>
+                        <td>Firma</td>
+                        <td>{{this.validaciones.firma}}</td>
+                    </tr>
+                    <tr>
+                        <td>Huella</td>
+                        <td>{{this.validaciones.huella}}</td>
+                    </tr>
+                    <tr>
+                        <td>N.Comprobante</td>
+                        <td>{{this.validaciones.comprobante}}</td>
+                    </tr>
+                    {{else}}
+                        <tr>
+                        <td>Foto</td>
+                        <td>Pendiente</td>
+                    </tr>
+                    <tr>
+                        <td>Firma</td>
+                        <td>Pendiente</td>
+                    </tr>
+                    <tr>
+                        <td>Huella</td>
+                        <td>Pendiente</td>
+                    </tr>
+                    <tr>
+                        <td>N.Comprobante</td>
+                        {{#if comprobanteC}}
+                        <td>Aprobado</td>
+                        {{else}}
+                        <td>Pendiente</td>    
+                        {{/if}}
+                    </tr>
+                    {{/if}}
+                </tbody>
+            </table>
+            {{#if this.tramite}}
+            <a href="#actualizarDocumentos" style="pointer-events: none;">Actualizar documentos</a> 
+            <p>La fecha de recojo se encuentra programada a partir del dia 14/05/2023 en la sede breña</p>
+            {{else}}
+            {{#if comprobante}}
+                <a href="#estadoTramite#actualizarDocumentos">Actualizar documentos</a>
+                    
+                {{else}}
+                <a href="#actualizarDocumentos" style="pointer-events: none;">Actualizar documentos</a>
+                {{/if}}
+            {{/if}}
+        {{#if comprobanteC}}
+            <p>Su turno de cita es para el día {{dia}} de Mayo a las {{hora}} en la sede {{sedeElegida}}</p>
+        {{/if}}
+        </div>
+
+        <div class="ventanaActualizarDocumentos">
+            
+
+           <form action="" method="post" enctype="multipart/form-data" class="actualizarDocumentos">
+                <h1>Actualizar documentos</h1>
+                <label for="">* Foto: <input type="file" name="image"></label>
+                <label for="">* Firma: <input type="file" name="image"></label>
+                <label for="">* Huella: <input type="file" name="image"></label>
+                <label for="">* N°. Comprobante: <input type="text" name="comprobante"></label>
+                <input type="hidden" name="recojo" value="actualizarDocumentos">
+                <input type="submit" value="Actualizar" >
+            </form>
+            <a href="#estadoTramite">Cerrar</a>
+        <p class="mensajeActualizacionDocumentos"></p>
+        </div> 
+
+    </div>
+</div>

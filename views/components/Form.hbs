@@ -1,0 +1,58 @@
+
+<div class="contenedorFormulario">
+        <div class="formulario">
+            <div class="ingreso">
+                <h2>Inicio de sesión</h2>
+                <form action="/" method="POST" onsubmit = localStorage.setItem("enabled","true")>
+                    <input type="text" placeholder=" Usuario" name="usuario" >
+                    <input type="password" placeholder=" Contraseña" name="contrasenia" autocomplete="on">
+                    <input type="submit" class="entradaUsuario">
+                    {{#if accesoDenegado}} 
+                    <p class="errorIngreso" data-enabled={{this.enabled}}>{{this.accesoDenegado}}</p>
+                    {{/if}}
+                </form>
+                <div>
+                    <p>¿No cuentas con un usuario?</p><a href="/register">Registrate aqui</a>
+                </div>
+            </div>
+                
+            <div class="ingresoDiseño">
+                <div class="titulo">
+                    <img src="/assets/3e4059575b48df47dfe2bbb0a1fb5de4.jpg" alt="" srcset="">
+                    <h2>Tramite de pasaporte</h2>
+
+                </div>
+                <div>
+                    <div>
+                        <img src="/assets/undraw_connected_world_wuay.svg" alt="" srcset="">
+
+                    </div>
+                    <p>
+                        Gestione su propia documentacion
+                    </p>
+
+                </div>
+                <div>
+                    <div>
+                        <img src="/assets/undraw_navigation_re_wxx4.svg" alt="" srcset="">
+
+                    </div>
+                    <p>
+                        Evite colas
+                    </p>
+
+                </div>
+                <div>
+                    <div>
+                        <img src="/assets/undraw_business_deal_re_up4u.svg" alt="" srcset="">
+
+                    </div>
+                    <p>
+                        Tramita tu pasaporte de manera rapida, segura y sencilla
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+</div>

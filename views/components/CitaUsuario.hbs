@@ -1,0 +1,213 @@
+<div class="modalidadCita">
+    {{#if comprobanteC}}
+   <h2>Formulario de registro de cita</h2>
+    <div class="contenedorTableCita">
+    <h3>Elige una fecha</h3>
+    <select name="" id="" class="sedeCita">
+        <option value="brenia">Breña</option>
+        <option value="lima">Lima</option>
+    </select>
+    <p class="diaElegido"></p>
+    <p class="horarioElegido"></p>
+    <p class="mensajeCita"></p>
+    <form action="" method="POST" class="enviarCita">
+        <input type="hidden" name="sedeElegida" id="sedeElegida">
+        <input type="hidden" name="recojo" value="cita">
+        <input type="hidden" name="dia" value="" id="dia">
+        <input type="hidden" name="hora" value="" id="hora">
+        <input type="submit" value="Registrar cita"> 
+        <h4>Mayo</h4>
+        <div class="tablaDias">
+            <table class="tablaBrenia">
+            <thead>
+                <th>D</th>
+                <th>L</th>
+                <th>M</th>
+                <th>M</th>
+                <th>J</th>
+                <th>V</th>
+                <th>S</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td class="diaValido">1</td>
+                    <td class="diaOcupado">2</td>
+                    <td class="diaValido">3</td>
+                    <td class="diaValido">4</td>
+                    <td class="diaOcupado">5</td>
+                    <td class="diaValido">6</td>
+                </tr>
+                <tr>
+                    <td class="diaNoValido">7</td>
+                    <td class="diaValido">8</td>
+                    <td class="diaValido">9</td>
+                    <td class="diaValido">10</td>
+                    <td class="diaValido">11</td>
+                    <td class="diaValido">12</td>
+                    <td class="diaValido">13</td>
+                </tr>
+                <tr>
+                    <td class="diaNoValido">14</td>
+                    <td class="diaOcupado">15</td> 
+                    <td class="diaOcupado">16</td>
+                    <td class="diaValido">17</td>
+                    <td class="diaOcupado">18</td>
+                    <td class="diaValido">19</td>
+                    <td class="diaOcupado">20</td>
+                </tr>
+                <tr>
+                    <td class="diaNoValido">21</td>
+                    <td class="diaValido">22</td>
+                    <td class="diaOcupado">23</td>
+                    <td class="diaValido">24</td>
+                    <td class="diaValido">25</td>
+                    <td class="diaValido">26</td>
+                    <td class="diaValido">27</td>
+                </tr>
+                <tr>
+                    <td class="diaNoValido">28</td>
+                    <td class="diaValido">29</td>
+                    <td class="diaValido">30</td>
+                    <td class="diaOcupado">31</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            </table>
+            <table class="tablaLima">
+            <thead>
+                <th>D</th>
+                <th>L</th>
+                <th>M</th>
+                <th>M</th>
+                <th>J</th>
+                <th>V</th>
+                <th>S</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td class="diaValido">1</td>
+                    <td class="diaValido">2</td>
+                    <td class="diaOcupado">3</td>
+                    <td class="diaValido">4</td>
+                    <td class="diaOcupado">5</td>
+                    <td class="diaValido">6</td>
+                </tr>
+                <tr>
+                    <td class="diaNoValido">7</td>
+                    <td class="diaValido">8</td>
+                    <td class="diaOcupado">9</td>
+                    <td class="diaOcupado">10</td>
+                    <td class="diaValido">11</td>
+                    <td class="diaValido">12</td>
+                    <td class="diaValido">13</td>
+                </tr>
+                <tr>
+                    <td class="diaNoValido">14</td>
+                    <td class="diaValido">15</td> 
+                    <td class="diaOcupado">16</td>
+                    <td class="diaOcupado">17</td>
+                    <td class="diaValido">18</td>
+                    <td class="diaValido">19</td>
+                    <td class="diaValido">20</td>
+                </tr>
+                <tr>
+                    <td class="diaNoValido">21</td>
+                    <td class="diaValido">22</td>
+                    <td class="diaValido">23</td>
+                    <td class="diaValido">24</td>
+                    <td class="diaOcupado">25</td>
+                    <td class="diaValido">26</td>
+                    <td class="diaValido">27</td>
+                </tr>
+                <tr>
+                    <td class="diaNoValido">28</td>
+                    <td class="diaValido">29</td>
+                    <td class="diaValido">30</td>
+                    <td class="diaOcupado">31</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+
+            <div class="tablaHora1">
+                <table>
+                    <tr>
+                        <td class="horaValida">09:00</td>
+                        <td class="horaOcupado">09:30</td>
+                        <td class="horaValida">10:00</td>
+                        <td class="horaValida">10:30</td>
+                        <td class="horaOcupado">11:00</td>
+                        <td class="horaValida">11:30</td>
+                        <td class="horaValida">12:00</td>
+                        <td class="horaValida">12:30</td>
+                    </tr>
+                    <tr>
+                        <td class="horaValida">13:00</td>
+                        <td class="horaOcupado">13:30</td>
+                        <td class="horaValida">14:00</td>
+                        <td class="horaValida">14:30</td>
+                        <td class="horaOcupado">15:00</td>
+                        <td class="horaOcupado">15:30</td>
+                        <td class="horaValida">16:00</td>
+                        <td class="horaValida">16:30</td>
+                    </tr>
+                    <tr>
+                        <td class="horaValida">17:00</td>
+                        <td class="horaValida">17:30</td>
+                        <td class="horaValida">18:00</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="tablaHora2">
+                <table>
+                    <tr>
+                        <td class="horaOcupado">09:00</td>
+                        <td class="horaValida">09:30</td>
+                        <td class="horaValida">10:00</td>
+                        <td class="horaOcupado">10:30</td>
+                        <td class="horaValida">11:00</td>
+                        <td class="horaValida">11:30</td>
+                        <td class="horaValida">12:00</td>
+                        <td class="horaValida">12:30</td>
+                    </tr>
+                    <tr>
+                        <td class="horaOcupado">13:00</td>
+                        <td class="horaValida">13:30</td>
+                        <td class="horaValida">14:00</td>
+                        <td class="horaOcupado">14:30</td>
+                        <td class="horaValida">15:00</td>
+                        <td class="horaOcupado">15:30</td>
+                        <td class="horaValida">16:00</td>
+                        <td class="horaValida">16:30</td>
+                    </tr>
+                    <tr>
+                        <td class="horaValida">17:00</td>
+                        <td class="horaValida">17:30</td>
+                        <td class="horaOcupado">18:00</td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div> 
+        
+    {{else}}
+    <h2>Formulario de registro de citas para pasaporte</h2>
+    <div class="citaComprobante">
+        <form action="" method="POST" class="validacionComprobanteCita">
+            <label for="cC">N.Comprobante: <input type="text" name="comprobante" id="cC"></label>
+            <input type="hidden" name="recojo" value="validacionCC">
+            <input type="submit" value="continuar">
+        </form>
+        <p class="mensajeCitaComprobante"></p>
+    </div>
+    {{/if}}
+
+</div>

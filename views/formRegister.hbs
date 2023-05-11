@@ -1,0 +1,27 @@
+<div class="formRegister">
+    <div>
+        <h2 class="titleForm">Formulario de registro en el Sistema</h2>
+        <form action="/register" method="post" class="registro">
+            <div class="contenedorInputs">
+                <label for="nombre">* Nombre: <div class="nombreFormRegister"><input type="text" name="nombre" id="nombre" required></div></label> 
+                <label for="apellidoP">* Apellido Paterno: <input type="text" name="apellidoP" id="apellidoP" required></label> 
+                <label for="apellidoM">* Apellido Materno: <input type="text" name="apellidoM" id="apellidoM" required></label> 
+                <label for="usuario">* Usuario: <div class="nombreFormRegister"><input type="text" name="usuario" id="usuario" required></div></label> 
+                <label for="dni">* DNI: <div class="nombreFormRegister"><input type="text" name="dni" id="dni" required></div></label> 
+                <label for="correo">* Correo: <input type="email" name="correo" id="correo" required></label> 
+                <label for="celular">* Celular: <input type="text" name="celular" id="celular" required></label> 
+                <label for="contrasenia">* Contraseña: <div class="nombreFormRegister"><input type="password" name="contrasenia" id="contrasenia" required autocomplete="on"></div></label> 
+                <label for="contraseniaR">* Repita su contraseña: <div class="nombreFormRegister"><input type="password" id="contraseniaR" required autocomplete="on"></div></label>
+            </div>
+                <input type="submit" value="Registrarse">
+         </form>
+         <div class="errorRegister">
+         {{#if accesoDenegado}}<p>{{this.accesoDenegado}}</p>{{/if}}
+         </div>
+         </div>
+    </div>
+    <div>
+    </div>
+</div>
+
+<script src="/js/registro-login.js"></script>

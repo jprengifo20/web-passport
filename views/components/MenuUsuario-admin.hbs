@@ -1,0 +1,56 @@
+<div class="contenedorG-menu">
+    <div class="menu">
+        
+        <div class="menuOpciones">
+
+            <div class="menuLogo">
+            <img src="/assets/Logo_pasaporte.png" alt="" srcset="">
+        </div>
+            <details>
+                <summary>Perfil</summary>
+                <a href="#consultarDatos" class="datosClick">Consultar datos</a>
+            </details>
+            {{#if this._id}}
+            <details>
+                <summary>Tramite de pasaporte</summary>
+                {{#if comprobanteC}}
+                <a href="#modalidadRecojo" class="recojoClick" style="pointer-events: none; color: brown;">Modalidad recojo</a href="">
+                {{else}}
+                <a href="#modalidadRecojo" class="recojoClick">Modalidad recojo</a href="">
+                {{/if}}
+                {{#if comprobante}}
+                <a href="#modalidadCita" class="citaClick" style="pointer-events: none; color: brown;">Modalidad cita</a>
+                {{else}}
+                <a href="#modalidadCita" class="citaClick">Modalidad cita</a>
+                    
+                {{/if}}
+            </details>
+            {{/if}}
+            {{#if this._id}}
+            <details>
+                <summary>Consultar tramite</summary>
+                <a href="#estadoTramite" class="estadoClick">Estado de trámite</a href="">
+            </details>
+            {{else}}
+            <details>
+                <summary>Validar datos</summary>
+                <a href="#estadoTramite" class="clientesClick">Estado de trámite</a href="">
+            </details>
+            {{/if}}
+        <a href="/">Cerrar sesión</a>
+
+        </div>
+    </div>
+    <div class="pages">
+        {{#if this._id}}
+            {{> ConsultarDatosUsuario this = usuarioT}}
+            {{> RecojoUsuario}}
+            {{> EstadoTramiteUsuario this = usuarioT}}
+            {{> CitaUsuario}}
+        {{else}}
+            {{> consultarDatosAdmin}}
+            {{> ConsultarClientes }}
+        {{/if}}
+        {{> FooterUsuario}}
+    </div>
+</div>

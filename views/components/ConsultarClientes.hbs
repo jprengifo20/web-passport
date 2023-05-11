@@ -1,0 +1,99 @@
+
+<div class="datosClientes">
+<h2>Seleccionar usuario para validar documentos</h2>
+<label for=""> Buscar usuario:
+<input type="search" class="buscar">
+</label>
+<label for="">Tipo de trámite:
+<select id="" class="modoTramite">
+    <option value="recojo">Modalidad Recojo</option>
+    <option value="cita">Modalidad cita</option>
+</select>
+
+</label>
+    <table>
+        <thead>
+            <tr>
+            <th>Usuario</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>DNI</th>
+            <th>Correo</th>
+            <th>Tipo de tramite</th>
+
+            {{!-- <th>doc 2</th>
+            <th>doc 3</th> --}}
+            <th>Estado de tramite</th>
+        </tr>
+        </thead>
+        <tbody>
+            {{#each this.usuariosT}}
+                <tr class="fila">
+                    <td>{{usuario}}</td>
+                    <td>{{nombre}}</td>
+                    <td>{{apellidoP}} {{apellidoM}}</td>
+                    <td>{{dni}}</td>
+                    <td>{{correo}}</td>
+                        {{!-- {{#each imgsUrl }} --}}
+                    <td>
+                        {{#if comprobanteC}}
+                        <p class="modeloTramite">Cita</p>
+                        {{else}}
+                        <a href="#{{_id}}" data-id={{_id}} class="modeloTramite boton-azul">Recojo</a>
+                        {{/if}}
+                    </td>
+                   
+                    <td>
+                        {{#if tramite}}
+                        <p class="aprobado">Aprobado</p>
+                        {{else}}
+                       <p class="pendiente">Pendiente</p>
+                        {{/if}}
+                    </td>
+                    <input type="hidden" value={{usuario}} class="filaBuscado">
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+
+{{#each this.usuariosT}}
+    <div id="{{_id}}" class="ventanaModalU">
+        <h3>Validación de datos:</h3> <!-- Aquí agregamos el título -->
+        <h3> </h3> 
+        <div class="documentosUsuario">
+{{#each imgsUrl }}
+            <a href={{this}} class="" download="Documento">Descargar</a>
+              
+{{/each}}
+             
+            <p>Comprobante ingresado: {{comprobante}}</p>
+        </div>
+    <div class="validacionesAdmin">
+        <form action="/administrador" method="post">
+            <select name="foto" id="">
+                <option value="aprobado">Documento aprobado</option>
+                <option value="no aprobado">Documento no aprobado</option>
+            </select>
+            <select name="firma" id="">
+               <option value="aprobado">Documento aprobado</option>
+                <option value="no aprobado">Documento no aprobado</option>
+            </select>
+            <select name="huella" id="">
+                <option value="aprobado">Documento aprobado</option>
+                <option value="no aprobado">Documento no aprobado</option>
+            </select>
+            <select name="comprobante" id="">
+                <option value="aprobado">Comprobante aceptado</option>
+                <option value="no aprobado">Comprobante no aceptado</option>
+            </select>
+        <p>Comprobante del sistema: {{comprobanteDefault}}</p>
+        </div>
+        <input type="hidden" value="{{_id}}" name="idOculto">
+        <input type="submit" value="Aceptar">
+        </form>
+        <a href="#estadoTramite">Cancelar</a>
+    </div> 
+    </div>    
+{{/each}}
+</div>
